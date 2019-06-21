@@ -1,8 +1,25 @@
+/**
+ * Libraries
+ */
+
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {
+   Provider
+} from 'react-redux';
 
-import FormContainer from './components/container/FormContainer';
+import store from "./store/store";
 
-ReactDOM.render(<FormContainer/>,
+/**
+ * Components
+ */
+
+import App from './components/App';
+
+
+ReactDOM.render(
+   <Provider store={store}>
+         <App/>
+   </Provider>,
    document.getElementById('app')
 );
