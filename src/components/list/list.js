@@ -11,9 +11,6 @@ import {
 } from 'react-redux';
  
 
-const mapStateToProps = state => {
-    return { articles: state.articles };
-};
 
 const List = ({ articles }) => (
     <ul className="list-group list-group-flush">
@@ -25,4 +22,10 @@ const List = ({ articles }) => (
     </ul>
 );
 
- export default connect(mapStateToProps)(List);
+const mapStateToProps = state => {
+  return { 
+    articles: state.articles 
+  };
+};
+
+export default connect(mapStateToProps)(List);

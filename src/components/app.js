@@ -12,6 +12,7 @@ import React,{
 
 import List from './list/list';
 import Form from './form/form';
+import Post from './post/post';
 
 /**
  * Styles
@@ -19,7 +20,7 @@ import Form from './form/form';
 
 
 /**
- * Location component definition and export
+ *  Post component definition and export
  */
 export class App extends Component {
 
@@ -48,6 +49,10 @@ export class App extends Component {
                 <h2>Add a new article</h2>
                 <Form />
             </div>
+            <div className="col-md-4 offset-md-1">
+                <h2>Posts</h2>
+                <Post />
+            </div>
       </div>
       );
    }
@@ -57,5 +62,5 @@ export class App extends Component {
  * Prop types
  */
 
- 
+
 export default App;
