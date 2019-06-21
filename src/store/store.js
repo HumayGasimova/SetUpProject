@@ -26,11 +26,23 @@ import exampleReducer from '../reducers/exampleReducer';
 //     applyMiddleware(logger)
 //     );
 
+const middleware = [];
 
-//actions in a collapsed view
+/**
+ * actions in a collapsed view
+ */
+
 const logger = createLogger({collapsed:true});
 
-const createStoreWithMiddleware = applyMiddleware(logger)(createStore)
+/**
+ * do not show in production
+ */
+
+if (process.env.ENVIRONMENT !== 'production'){
+    middleware.push(logger);
+}
+
+const createStoreWithMiddleware = applyMiddleware(...middleware)(createStore)
 const store = createStoreWithMiddleware(exampleReducer)
 
 export default store;
